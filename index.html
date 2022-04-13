@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas Personales</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="header__nav-ul">
+                <li>
+                    <h1 class="titulo">Finanzas Personales</h1>
+                </li>
+                <li><a href="#finanzas">EMPEZÁ YA</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="main__section" id="finanzas">
+            <div class="main__section-div">
+                <label for="monto">Ingresa un monto</label>
+                <input type="number" placeholder="Ingresa un monto">
+            </div>
+            <div class="main__section-div">
+                <label for="ingreso">Es ingreso</label>
+                <input id="ingreso" type="radio" value="hola">
+                <label for="gasto">Es egreso</label>
+                <input id="gasto" type="radio">
+            </div>
+            <div class="opciones"></div>
+            <button class="btnAgregar btn">Agregar</button>
+            <p class="montoFinal">Monto total: 0</p>
+            <select id="select">
+                <option value="todos">Todos</option>
+                <option value="ingresos">Ingresos</option>
+                <option value="egresos">Egresos</option>
+            </select>
+        </section>
+        <div class="tarjetas"></div>
+    </main>
+    <footer class="footer">
+        <p>Francisco José Lavalle</p>
+        <p>Proyecto JavaScript Coderhouse</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

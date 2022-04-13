@@ -1,0 +1,226 @@
+/* Fuentes
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+Fuentes */
+
+/* -------------Globales------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+*::selection {
+    background: #58d;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+h1 {
+    color: #fff;
+}
+#select {
+    margin-bottom: 2rem;
+    padding: .5rem;
+    outline: none;
+}
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+}
+.btn {
+    padding: .5rem;
+    background-color: #47f;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    border-radius: .3rem;
+}
+/* -------------Globales------------- */
+
+/* -------------Inicio Header------------- */
+.header {
+    background-image: url(./img/fondo.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 15rem;
+}
+.header__nav {
+    background-color: #0007;
+    backdrop-filter: blur(.2rem);
+    height: 100%;
+}
+.header__nav-ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.header__nav-ul li {
+    padding: 1rem;
+}
+.header__nav-ul a {
+    color: #fff;
+    font-size: 1.15rem;
+    background-color: #47f;
+    padding: 1rem;
+    border-radius: .3rem;
+}
+/* -------------Fin Header------------- */
+
+
+
+/* -------------Inicio Main------------- */
+.main {
+    margin: 5rem auto;
+}
+.main__section {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+}
+.main__section-div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: .2rem;
+}
+.opciones div {
+    background-color: #f88;
+    padding: 1rem;
+    text-align: center;
+}
+.montoFinal {
+    text-align: center;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+input {
+    padding: .2rem;
+    outline: none;
+}
+.tarjetas {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.tarjetas div {
+    display: flex;
+    justify-content: space-between;
+    background-color: #47f;
+    color: #fff;
+    padding: 1rem 20rem;
+    gap: .5rem;
+}
+.tarjetas div:last-child {
+    animation-name: tarjetas;
+    animation-duration: .3s;
+}
+@keyframes tarjetas {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 25%;
+    }
+    50% {
+        opacity: 50%;
+    }
+    75% {
+        opacity: 75%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+.tarjetas div p {
+    cursor: pointer;
+    font-weight: 900;
+}
+.tarjetas div p:hover {
+    color: red;
+}
+@media all and (max-width: 1000px) {
+    .tarjetas div {
+        padding: 1rem 10rem;
+    }
+}
+@media all and (max-width: 768px) {
+    .tarjetas div {
+        padding: 1rem 5rem;
+    }
+}
+@media all and (max-width: 600px) {
+    .tarjetas div {
+        padding: 1rem 1rem;
+    }
+}
+/* -------------Fin Main------------- */
+
+
+
+/* -------------Inicio Footer------------- */
+.footer {
+    background-color: #666;
+    height: 10rem;
+    text-align: center;
+    font-weight: 900;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+/* -------------Fin Footer------------- */
+
+/*------------- Login -------------*/
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(75deg, #bbb, #aaa, #999, #888, #777, #666, #555);
+}
+.formulario {
+    width: 50%;
+    background-color: #ccc;
+    padding: 1rem;
+    box-shadow: #333 1px .5rem 1.8rem .3rem;
+    border-radius: .3rem;
+}
+.formulario fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.formulario fieldset div {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+.formulario fieldset div:nth-child(5) {
+    flex-direction: row;
+    align-items: center;
+}
+legend {
+    font-family: 'Montserrat', sans-serif;
+    padding: 1rem 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+}
+.texto p {
+    background-color: #f88;
+    padding: .8rem;
+    text-align: center;
+}
