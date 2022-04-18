@@ -1,28 +1,57 @@
 // Variables 
 const ingreso = document.querySelector('#ingreso');
 const gasto = document.querySelector('#gasto');
-const input = document.querySelector('input');
+const input = document.querySelector('#inputMonto');
 const boton = document.querySelector('.btnAgregar');
 const opciones = document.querySelector('.opciones');
 const montoFinal = document.querySelector('.montoFinal');
 const tarjetas = document.querySelector('.tarjetas');
 const select = document.querySelector('#select');
+const dolar = document.querySelector('#dolar');
+const bitcoin = document.querySelector('#bitcoin');
 // Arrays
 let ingresoGasto = [];
 
+// API Bitcoin y Dolar
+function llamarAPIs() {
+    // API Bitcoin
+    fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+        .then(response => response.json())
+        .then(data => bitcoinAPI(data))
 
+    // API Dólar Oficial
+    fetch('https://v6.exchangerate-api.com/v6/6c956f023ff4a1e2b0045c42/latest/USD')
+        .then(response => response.json())
+        .then(data => usdAPI(data))
+
+
+    function bitcoinAPI(data) {
+        const usd = data.bpi.USD.rate_float;
+        bitcoin.textContent = usd;
+    }
+    function usdAPI(data) {
+        const ars = data.conversion_rates.ARS
+        dolar.textContent = ars;
+    }
+
+}
 // Eventos
 // Cargar el localStorage el cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     // Elegir el localStorage, en su defecto el array vacío
     ingresoGasto = JSON.parse(localStorage.getItem('ingresoGasto')) || [];
 
+    llamarAPIs();
     escribirHTML(ingresoGasto);
 })
 // Hacer funcional el botón
-boton.addEventListener('click', guardarDatos);
+boton.addEventListener('click', () => {
+    resetSelect();
+    guardarDatos();
+});
 document.addEventListener('keyup', (e) => {
     if (e.key == 'Enter') {
+        resetSelect();
         guardarDatos();
     }
 })
@@ -31,6 +60,7 @@ select.addEventListener('change', selectChange);
 gasto.addEventListener('click', revisarRadio);
 ingreso.addEventListener('click', revisarRadio2);
 
+input.addEventListener('input', resetSelect);
 // Clase para los ingresos y egresos
 class Datos {
     constructor(cantidad, tipo, fecha) {
@@ -152,6 +182,14 @@ function resetForm() {
     gasto.checked = false;
     ingreso.checked = false;
     input.value = '';
+}
+
+// Resetea el select
+function resetSelect() {
+    if (select.value != 'todos') {
+        select.value = 'todos';
+        selectChange();
+    }
 }
 
 // Resetea el radio que no quieras usar

@@ -22,6 +22,10 @@ li {
 h1 {
     color: #fff;
 }
+h2.titulo {
+    margin: 1rem 0;
+    font-size: 1.65rem;
+}
 #select {
     margin-bottom: 2rem;
     padding: .5rem;
@@ -49,6 +53,7 @@ h1 {
     background-image: url(./img/fondo.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 15rem;
 }
 .header__nav {
@@ -80,6 +85,24 @@ h1 {
 /* -------------Inicio Main------------- */
 .main {
     margin: 5rem auto;
+}
+.main__section-valores {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4rem;
+    background-color: #249;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: .25rem;
+}
+.main__section-valores div {
+    display: flex;
+    flex-direction: column;
+    background-color: #4c7;
+    margin-bottom: -1rem;
+    margin-top: 1rem;
+    box-shadow: #014 -5px -5px 3px;
+    padding: 1rem;
 }
 .main__section {
     width: 85%;
@@ -169,7 +192,7 @@ input {
 
 /* -------------Inicio Footer------------- */
 .footer {
-    background-color: #666;
+    background-color: #444;
     height: 10rem;
     text-align: center;
     font-weight: 900;
@@ -223,4 +246,11 @@ legend {
     background-color: #f88;
     padding: .8rem;
     text-align: center;
+}
+
+@media all and (max-width: 500px) {
+    .main__section-valores div{
+        margin: 1rem 0;
+        box-shadow: none;
+    }
 }

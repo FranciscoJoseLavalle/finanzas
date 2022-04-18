@@ -26,10 +26,21 @@
         </nav>
     </header>
     <main class="main">
+        <h2 class="titulo">Valores del Mercado</h2>
+        <section class="main__section-valores">
+            <div>
+                <p>Precio dólar oficial</p>
+                <p id="dolar"></p>
+            </div>
+            <div>
+                <p>Precio Bitcoin</p>
+                <p id="bitcoin"></p>
+            </div>
+        </section>
         <section class="main__section" id="finanzas">
             <div class="main__section-div">
                 <label for="monto">Ingresa un monto</label>
-                <input type="number" placeholder="Ingresa un monto">
+                <input type="number" placeholder="Ingresa un monto" id="inputMonto">
             </div>
             <div class="main__section-div">
                 <label for="ingreso">Es ingreso</label>
@@ -49,8 +60,7 @@
         <div class="tarjetas"></div>
     </main>
     <footer class="footer">
-        <p>Francisco José Lavalle</p>
-        <p>Proyecto JavaScript Coderhouse</p>
+        <p class="titulo">Finanzas Personales</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
