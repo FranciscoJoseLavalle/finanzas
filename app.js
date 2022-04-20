@@ -33,8 +33,8 @@ function llamarAPIs() {
         const ars = data.conversion_rates.ARS
         dolar.textContent = ars;
     }
-
 }
+
 // Eventos
 // Cargar el localStorage el cargar la página
 document.addEventListener('DOMContentLoaded', () => {
@@ -113,6 +113,13 @@ function guardarDatos() {
 // Escribir el HTML
 function escribirHTML(ingresoGasto) {
     tarjetas.textContent = '';
+
+    if (ingresoGasto == false) {
+        const p = document.createElement('p');
+        p.classList.add('sinValor');
+        p.textContent = 'Aún no ingresaste ningún valor...';
+        tarjetas.append(p);
+    }
     ingresoGasto.forEach(element => {
         const div = document.createElement('div');
 
@@ -144,7 +151,6 @@ function escribirHTML(ingresoGasto) {
     for (let i = 0; i < egresosSumas.length; i++) {
         gastosSuma.push(egresosSumas[i].cantidad);
     }
-
     for (let i = 0; i < ingresosSuma.length; i++) {
         ingresoCero += ingresosSuma[i];
     }
@@ -163,6 +169,7 @@ function borrarMonto(id) {
     ingresoGasto = ingresoGasto.filter(element => element.id !== id);
 
     escribirHTML(ingresoGasto);
+    selectChange();
 }
 
 

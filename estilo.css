@@ -46,6 +46,9 @@ h2.titulo {
     border: none;
     border-radius: .3rem;
 }
+.sinValor {
+    text-align: center;
+}
 /* -------------Globales------------- */
 
 /* -------------Inicio Header------------- */
@@ -101,7 +104,7 @@ h2.titulo {
     background-color: #4c7;
     margin-bottom: -1rem;
     margin-top: 1rem;
-    box-shadow: #014 -5px -5px 3px;
+    box-shadow: #014 -10px -10px 1px 1px;
     padding: 1rem;
 }
 .main__section {
